@@ -13,34 +13,94 @@
         <div id="Calculator">
             <input id="Display" placeholder="0" readonly>
             <div class="button-container">
-                <button class="Operator">AC</button>
-                <button class="Operator">DEL</button>
-                <button class="Operator">%</button>
-                <button class="Operator">/</button>
+                <button class="Operator" onclick="
+                    currentDisplay = '';
+                    displayValue()">AC
+                </button>
+                <button class="Operator" onclick="
+                    currentDisplay = currentDisplay.substring(0, currentDisplay.length-1);
+                    displayValue()">
+                    DEL
+                </button>
+                <button class="Operator" onclick="
+                    currentDisplay += '%';
+                    displayValue()">%
+                </button>
+                <button class="Operator" onclick="
+                    currentDisplay += '/';
+                    displayValue()">/
+                </button>
             </div>
             <div class="button-container">
-                <button class="my-button">7</button>
-                <button class="my-button">8</button>
-                <button class="my-button">9</button>
-                <button class="Operator">*</button>
+                <button class="my-button" onclick="
+                    currentDisplay += 7;
+                    displayValue()">7
+                </button>
+                <button class="my-button" onclick="
+                    currentDisplay += 8;
+                    displayValue()">8
+                </button>
+                <button class="my-button" onclick="
+                    currentDisplay += 9;
+                    displayValue()">9
+                </button>
+                <button class="Operator" onclick="
+                    currentDisplay += '*';
+                    displayValue()">*
+                </button>
             </div>
             <div class="button-container">
-                <button class="my-button">4</button>
-                <button class="my-button">5</button>
-                <button class="my-button">6</button>
-                <button class="Operator">-</button>
+                <button class="my-button" onclick="
+                    currentDisplay += 4;
+                    displayValue()">4
+                </button>
+                <button class="my-button" onclick="
+                    currentDisplay += 5;
+                    displayValue()">5</button>
+                <button class="my-button" onclick="
+                    currentDisplay += 6;
+                    displayValue()">6
+                </button>
+                <button class="Operator" onclick="
+                    currentDisplay += '-';
+                    displayValue()">-
+                </button>
             </div>
             <div class="button-container">
-                <button class="my-button">1</button>
-                <button class="my-button">2</button>
-                <button class="my-button">3</button>
-                <button class="Operator">+</button>
+                <button class="my-button" onclick="
+                    currentDisplay += 1;
+                    displayValue()">1
+                </button>
+                <button class="my-button" onclick="
+                    currentDisplay += 2;
+                    displayValue()">2
+                </button>
+                <button class="my-button" onclick="
+                    currentDisplay += 3;
+                    displayValue()">3
+                </button>
+                <button class="Operator" onclick="
+                    currentDisplay += '+';
+                    displayValue()">+
+                </button>
             </div>
             <div class="button-container">
-                <button class="my-button">00</button>
-                <button class="my-button">0</button>
-                <button class="my-button">.</button>
-                <button class="equalbtn">=</button>
+                <button class="my-button" onclick="
+                    currentDisplay += '00';
+                    displayValue()">00
+                </button>
+                <button class="my-button" onclick="
+                    currentDisplay += 0;
+                    displayValue()">0
+                </button>
+                <button class="my-button" onclick="
+                    currentDisplay += '.';
+                    displayValue()">.
+                </button>
+                <button class="equalbtn" onclick="
+                    currentDisplay = eval (currentDisplay);
+                    displayValue()">=
+                </button>
             </div>
         </div>
     </main>
